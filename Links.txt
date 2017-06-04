@@ -1,0 +1,5 @@
+Data and script download links for the Hong Kong Open Source Conference 2017 SQLite Workshop:
+
+http://insideairbnb.com/get-the-data.html
+http://xpo6.com/download-stop-word-list/
+https://github.com/amandalam/SQLiteWorkshop
