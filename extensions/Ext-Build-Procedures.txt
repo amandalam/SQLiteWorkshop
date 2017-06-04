@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------------------------
+Procedures to build and use SQLite fts5 extension in DB Browser for SQLite on Windows
+--------------------------------------------------------------------------------------------------- 
+ 
+1. Download “Preprocessed C sources” from http://sqlite.org/download.html and extract all the files to the C:\Program Files (x86)\SQLite\Source folder. Make sure fts5.c is there.
+
+
+2. Install x86 version of MinGW, if not already installed: http://www.mingw.org/
+
+3. Install latest production x86 build of DB Browser for SQLite, if not already installed: http://sqlitebrowser.org/  
+
+4. Run this at Command Prompt:
+
+C:\MinGW\bin\gcc -g -fPIC -shared -lm C:\Program Files (x86)\SQLite\Source\fts5.c -o C:\Program Files (x86)\DB Browser for SQLite\fts5.so
+
+5. Copy libgcc_s_dw2-1.dll from C:\MinGW\bin\ to C:\Program Files (x86)\DB Browser for SQLite\ . This file is required for the extension to be run properly.
+
+6. Open DB Browser for SQLite. In the menu, select View → Preferences, and click on the Extensions tab. 
+
+7. Add C:\Program Files (x86)\DB Browser for SQLite\fts5.so to the list.
+
+8. Verify it works by running:
+
+CREATE VIRTUAL TABLE email USING fts5(sender, title, body);
+
+Read more at: https://sqlite.org/fts5.html 
+ 
+ 
+--------------------------------------------------------------------------------------------------- 
+Procedures to build and use extension-functions extension in DB Browser for SQLite on Windows
+--------------------------------------------------------------------------------------------------- 
+ 
+1. Download extension-functions.c from http://www.sqlite.org/contrib/download/ the C:\Program Files (x86)\SQLite\Source folder. 
+
+
+2. Install x86 version of MinGW, if not already installed: http://www.mingw.org/
+
+
+3. Install latest production x86 build of DB Browser for SQLite, if not already installed: http://sqlitebrowser.org/ 
+
+4. Run this at Command Prompt:
+
+C:\MinGW\bin\gcc -g -fPIC -shared -lm C:\Program Files (x86)\SQLite\Source\extension-functions.c -o C:\Program Files (x86)\DB Browser for SQLite\extension-functions.so
+
+5. Copy libgcc_s_dw2-1.dll from C:\MinGW\bin\ to C:\Program Files (x86)\DB Browser for SQLite\ . This file is required for the extension to be run properly.
+
+6. Open DB Browser for SQLite. In the menu, select View → Preferences, and click on the Extensions tab. 
+
+7. Add C:\Program Files (x86)\DB Browser for SQLite\extension-functions.so to the list.
+
+8. Verify it works by running:
+
+SELECT log10(100);
