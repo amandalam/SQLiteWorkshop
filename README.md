@@ -41,5 +41,5 @@ SQLite Script files & extension binaries for the June 10th 2017 morning workshop
 
 	The original description of the workshop I submitted for the Hong Kong Open Source Conference 2017.
 
-All the files are licensed under GPL v3. See [LICENSE](../LICENSE) file for details.
+All the files are licensed under GPL v3. See [LICENSE](LICENSE) file for details.
 
